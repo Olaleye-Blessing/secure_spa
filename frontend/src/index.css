@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply hover:text-red-700;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  input, button {
+    @apply border rounded-md px-3 py-1;
+  }
+
+  button[type="submit"] {
+    @apply bg-red-700 text-white px-4 py-2;
+  }
+}
