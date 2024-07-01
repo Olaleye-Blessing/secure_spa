@@ -5,7 +5,20 @@ export default function Login() {
 
 	const onLogin = async (e) => {
 		e.preventDefault();
-		console.log({ name });
+
+		try {
+			const req = await fetch('http://localhost:3000/login', {
+				method: 'POST',
+				body: JSON.stringify({ name }),
+				credentials: 'include',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			const res = await req.json();
+		} catch (error) {
+			console.log('__ ERROR LOGGIN IN');
+		}
 	};
 
 	return (
