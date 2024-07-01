@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Login() {
+	const updateAccessToken = useAuth((state) => state.updateAccessToken);
+	const updateUser = useAuth((state) => state.updateUser);
+
 	const [name, setName] = useState('');
 
 	const onLogin = async (e) => {
@@ -16,6 +20,9 @@ export default function Login() {
 				},
 			});
 			const res = await req.json();
+
+			updateAccessToken(res.data.accessToken);
+			updateUser(res.data.user);
 		} catch (error) {
 			console.log('__ ERROR LOGGIN IN');
 		}
