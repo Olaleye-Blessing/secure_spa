@@ -13,6 +13,9 @@ export default function Navbar() {
 				<li>
 					<Link to='/login'>Login</Link>
 				</li>
+				<li>
+					<Link to='/dashboard'>Dashboard</Link>
+				</li>
 			</ul>
 			<p className='px-4 pb-2 break-words'>User Token: {accessToken}</p>
 		</nav>

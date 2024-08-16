@@ -40,7 +40,8 @@ app.post('/login', (req, res) => {
 	});
 });
 
-app.post('/refresh-token', (req, res) => {
+app.post('/refresh-token', async (req, res) => {
+	// await new Promise((r) => setTimeout(r, 800));
 	const currentRefreshToken = req.cookies.refreshTk;
 
 	if (!currentRefreshToken)
